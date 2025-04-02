@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import * as Papa from 'papaparse'
 import './SuccessPage.css'
-import DataTable from "../component/DataTable";
-
+import DataTable from '../component/DataTable'
 
 const allowedColumns = [
   'TEILNAHME',
@@ -53,10 +52,9 @@ function SuccessPage() {
     }))
   }
 
-  const handleSend = () => {
-    const selectedData = data.filter((_, index) => selectedRows[index])
-    console.log('Sending tracking info to:', selectedData)
-    alert('Tracking info sent to selected users!')
+  const handleSend = (selectedData) => {
+    console.log('🚀 Sending selected data:', selectedData)
+    alert(`Tracking info sent to ${selectedData.length} users!`)
   }
 
   return (

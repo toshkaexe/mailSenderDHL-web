@@ -1,8 +1,11 @@
 import React from 'react'
-import SendButton from "./SendButton";
+import SendButton from "../pages/SendButton";
+
 
 
 function DataTable({ headers, data, selectedRows, onToggleRow, onSend }) {
+  const selectedData = data.filter((_, index) => selectedRows[index])
+
   return (
       <div className="table-wrapper">
         <table>
@@ -35,7 +38,7 @@ function DataTable({ headers, data, selectedRows, onToggleRow, onSend }) {
           </tbody>
         </table>
 
-        <SendButton onClick={onSend} />
+        <SendButton selectedData={selectedData} onClick={onSend} />
       </div>
   )
 }

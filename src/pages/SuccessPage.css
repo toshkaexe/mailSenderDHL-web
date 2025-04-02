@@ -43,19 +43,3 @@ th, td {
 .selected-row {
   font-weight: bold;
 }
-
-.send-button {
-  margin-top: 16px;
-  padding: 10px 20px;
-  background-color: #e53935;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.send-button:hover {
-  background-color: #c62828;
-}
