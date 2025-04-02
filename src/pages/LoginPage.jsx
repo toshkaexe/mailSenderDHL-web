@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function WelcomePage() {
+function LoginPage() {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
@@ -10,25 +10,25 @@ function WelcomePage() {
     if (password === '1234') {
       navigate('/success')
     } else {
-      alert('Неверный пароль')
+      alert('Incorrect password')
     }
   }
 
   return (
       <form onSubmit={handleSubmit} style={{ padding: '40px' }}>
-        <h2>Введите пароль</h2>
+        <h2>Enter password</h2>
         <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Пароль"
+            placeholder="Password"
             style={{ padding: '8px', fontSize: '16px' }}
         />
         <button type="submit" style={{ marginLeft: '10px', padding: '8px 16px' }}>
-          Войти
+          Submit
         </button>
       </form>
   )
 }
 
-export default WelcomePage
+export default LoginPage

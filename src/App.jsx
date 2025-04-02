@@ -1,13 +1,12 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import WelcomePage from "./WelcomePage";
-import SuccessPage from "./UploadPage";
-
+import LoginPage from './pages/LoginPage'
+import SuccessPage from './pages/SuccessPage'
 
 function App() {
   return (
       <Routes>
-        <Route path="/" element={<WelcomePage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/success" element={<SuccessPage />} />
       </Routes>
   )
