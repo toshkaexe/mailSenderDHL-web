@@ -1,4 +1,5 @@
 import React from 'react'
+import SendButton from "./SendButton";
 
 
 function DataTable({ headers, data, selectedRows, onToggleRow, onSend }) {
@@ -34,9 +35,7 @@ function DataTable({ headers, data, selectedRows, onToggleRow, onSend }) {
           </tbody>
         </table>
 
-        <button className="send-button" onClick={onSend}>
-          Send order tracking to all selected users
-        </button>
+        <SendButton onClick={onSend} />
       </div>
   )
 }
