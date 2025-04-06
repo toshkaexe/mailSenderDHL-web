@@ -1,7 +1,11 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import LoginPage from './pages/LoginPage'
-import SuccessPage from './pages/SuccessPage'
+// File: src/App.jsx
+/**
+ * App component - main application component
+ */
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import SuccessPage from './pages/SuccessPage';
 
 function App() {
   return (
@@ -9,7 +13,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/success" element={<SuccessPage />} />
       </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

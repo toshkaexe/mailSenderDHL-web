@@ -1,18 +1,25 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// File: src/pages/LoginPage.jsx
+/**
+ * LoginPage component - handles authentication
+ */
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    setError(null);
+
     if (password === '1234') {
-      navigate('/success')
+      navigate('/success');
     } else {
-      alert('Incorrect password')
+      setError('Incorrect password');
     }
-  }
+  };
 
   return (
       <form onSubmit={handleSubmit} style={{ padding: '40px' }}>
@@ -24,11 +31,18 @@ function LoginPage() {
             placeholder="Password"
             style={{ padding: '8px', fontSize: '16px' }}
         />
-        <button type="submit" style={{ marginLeft: '10px', padding: '8px 16px' }}>
+        <button
+            type="submit"
+            style={{ marginLeft: '10px', padding: '8px 16px' }}
+        >
           Submit
         </button>
+
+        {error && (
+            <div style={{ color: 'red', marginTop: '10px' }}>{error}</div>
+        )}
       </form>
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;

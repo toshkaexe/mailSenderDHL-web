@@ -1,10 +1,11 @@
-import React from 'react'
-import SendButton from "../pages/SendButton";
+// File: src/components/DataTable.jsx
+/**
+ * DataTable component - presents data in tabular format
+ */
+import React from 'react';
 
-
-
-function DataTable({ headers, data, selectedRows, onToggleRow, onSend }) {
-  const selectedData = data.filter((_, index) => selectedRows[index])
+function DataTable({ headers, data, selectedRows, onToggleRow }) {
+  if (!data.length) return null;
 
   return (
       <div className="table-wrapper">
@@ -37,10 +38,8 @@ function DataTable({ headers, data, selectedRows, onToggleRow, onSend }) {
           ))}
           </tbody>
         </table>
-
-
       </div>
-  )
+  );
 }
 
-export default DataTable
+export default DataTable;
