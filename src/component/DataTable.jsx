@@ -38,7 +38,7 @@ function DataTable({ headers, data, selectedRows, onToggleRow, onSend }) {
           </tbody>
         </table>
 
-        <SendButton selectedData={selectedData} onClick={onSend} />
+
       </div>
   )
 }
