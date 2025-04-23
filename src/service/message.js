@@ -8,20 +8,22 @@ export const MessageService = {
       const trackingUrl = `https://www.dhl.de/de/privatkunden/dhl-sendungsverfolgung.html?piececode=${row['Sendungsnummer']}`;
       return {
         email: row['Empfänger E-Mail-Adresse'] || '',
-        subject: '[TEST EMAIL]: Your Order Has Been Shipped – Tracking Information Inside',
+        subject: 'Your Order Has Been Shipped – Tracking Information Inside',
         message: createEmailTemplate(row, trackingUrl)
       };
     });
   }
 };
-
 function createEmailTemplate(row, trackingUrl) {
   const name = `${row['Empfänger Name 1'] || ''}`.trim();
+  const trackingNumber = row['Sendungsnummer'] || '';
 
   return `
-    <p>Dear <strong>${name || 'Customer'}</strong>,</p>
+    <p>Dear ${name || 'Customer'},</p>
 
-    <p>I am happy to inform you that your order has been shipped, you can track your package here:</p>
+    <p>I am happy to inform you that your order has been shipped. You can track your package here:</p>
+
+    <p><strong>Tracking number:</strong> ${trackingNumber}</p>
 
     <p>
       <a href="${trackingUrl}" target="_blank" style="font-weight: bold;">${trackingUrl}</a>

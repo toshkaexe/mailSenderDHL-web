@@ -12,7 +12,8 @@ function DataTable({ headers, data, selectedRows, onToggleRow }) {
         <table>
           <thead>
           <tr>
-            <th></th>
+            <th>#</th> {/* Номер строки */}
+            <th></th> {/* Чекбокс */}
             {headers.map((header, i) => (
                 <th key={i}>{header}</th>
             ))}
@@ -24,6 +25,7 @@ function DataTable({ headers, data, selectedRows, onToggleRow }) {
                   key={rowIndex}
                   className={selectedRows[rowIndex] ? 'selected-row' : ''}
               >
+                <td>{rowIndex + 1}</td> {/* Нумерация строк */}
                 <td className="checkbox-cell">
                   <input
                       type="checkbox"
